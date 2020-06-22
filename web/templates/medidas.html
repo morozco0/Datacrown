@@ -11,7 +11,7 @@
 <body class="#e8f5e9 green lighten-5">
     <nav>
         <div class="nav-wrapper green lighten-1">
-          <a href="#!" class="brand-logo center">DataCrown</a>
+          <a href="#!" class="brand-logo center">COVID-19 en Chile</a>
           <ul class="left hide-on-med-and-down">
             <li ><a href="{% url 'index' %}">Inicio</a></li>
             <li><a href="{% url 'regiones' %}">Regiones</a></li>
@@ -20,33 +20,97 @@
         </div>
     </nav>
     
-    <div class="container">
-      <div class='raw'>
-          <div class='col s12'>
-              <div class="row">
-              </div>
-          </div>
-      </div>    
-    </div>
+<div class='row'>
+  <div class='card-panel col s8 offset-s2'>
+      <h3 style='text-align: center;'>Medidas sanitarias de prevención</h3>
+  </div>
+</div>
 
-    <footer class="page-footer green lighten-1">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Logo grupo</h5>
-            <p class="grey-text text-lighten-4">DataCrown</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">FONO COVID-19</h5>
-            logo uai
-          </div>
+<div class='row'>
+  <div class="col s8 offset-s2">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="{% static 'img/lavado.jpg' %}" height="300" />
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h3 style='text-align: center;'>Lavado de Manos</h3>
+          <p>Explicación</p>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-        © 2014 Copyright Text
+    </div>
+  </div>
+</div>
+
+<div class='row'>
+  <div class="col s8 offset-s2">
+    <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content">
+          <h3 style='text-align: center;'>Distanciamiento Social</h3>
+          <p>Explicación</p>
         </div>
       </div>
-    </footer>
+      <div class="card-image">
+        <img src="{% static 'img/distancia.jpg' %}" height="300" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='card-panel col s8 offset-s2'>
+      <h3 style='text-align: center;'>Medidas sanitarias tomadas por el Gobierno</h3>
+  </div>
+</div>
+
+<div class='row'>
+  <div class="col s4 offset-s2">
+    <div class="card">
+      <div class="card-image">
+        <img src="{% static 'img/cuarentena.jpg' %}" height="300" />
+      </div>
+      <div class="card-content">
+        <span class="card-title">Cuarentenas</span>
+        <p>I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s4">
+    <div class="card">
+      <div class="card-image">
+        <img src="{% static 'img/mascarillas.jpg' %}" height="300" />
+      </div>
+      <div class="card-content">
+        <span class="card-title">Uso obligatorio de Mascarillas</span>
+        <p>I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer green lighten-1">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Logo grupo</h5>
+        <p class="grey-text text-lighten-4">DataCrown</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">FONO COVID-19</h5>
+        logo uai
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
