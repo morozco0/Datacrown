@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+class Contagios(models.Model):
+    total_region = models.IntegerField()
+    total_fall = models.IntegerField()
+    nuev_cont = models.IntegerField()
+    nuev_fall = models.IntegerField()
+
+    def publish(self):
+        self.save()

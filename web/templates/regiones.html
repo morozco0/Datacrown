@@ -9,51 +9,60 @@
     <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
 </head>
 <body class="#e8f5e9 green lighten-5">
-    <nav>
-        <div class="nav-wrapper green lighten-1">
-          <a href="#!" class="brand-logo center">DataCrown</a>
-          <ul class="left hide-on-med-and-down">
-            <li><a href="{% url 'index' %}">Inicio</a></li>
-            <li class="active"><a href="">Regiones</a></li>
-            <li><a href="{% url 'medidas' %}">Medidas</a></li>
-          </ul>
-        </div>
-    </nav>
+  <nav>
+      <div class="nav-wrapper green lighten-1">
+        <a href="#!" class="brand-logo center">DataCrown</a>
+        <ul class="left hide-on-med-and-down">
+          <li><a href="{% url 'index' %}">Inicio</a></li>
+          <li class="active"><a href="">Regiones</a></li>
+          <li><a href="{% url 'medidas' %}">Medidas</a></li>
+        </ul>
+      </div>
+  </nav>
 
-    <div class="container">
-      <div class='raw'>
-          <div class='col s12'>
-              <div class="row">
-                <div class='center-align'>
-                  <ul id="dropdown2" class="dropdown-content">
-                    <li><a href="#!">Metropolitana<span class="badge">1</span></a></li>
-                    <li><a href="#!">two<span class="new badge">1</span></a></li>
-                    <li><a href="#!">three</a></li>
-                  </ul>
-                  <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Dropdown<i class="material-icons right">arrow_drop_down</i></a>              
-                </div>  
-              </div>
-          </div>
-      </div>    
+<div class='row'>
+  <div class='col s8 offset-s2'>  
+    <ul class="collection with-header">
+      <li class="collection-header"><h4>Seleccione una Región...</h4></li>
+      <li class="collection-item"><div>Metropolitana de Santiago<a href="{% url 'region' %}?n=Metropolitana de Santiago" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Arica y Parinacota<a href="{% url 'region' %}?n=de Arica y Parinacota" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Tarapacá<a href="{% url 'region' %}?n=de Tarapacá" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Antofagasta<a href="{% url 'region' %}?n=de Antofagasta" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Atacama<a href="{% url 'region' %}?n=de Atacama" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Coquimbo<a href="{% url 'region' %}?n=de Coquimbo" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Valparaíso<a href="{% url 'region' %}?n=de Valparaíso" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Libertador General Bernardo O’Higgins<a href="{% url 'region' %}?n=del Libertador General Bernardo O’Higgins" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Maule<a href="{% url 'region' %}?n=del Maule" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Ñuble<a href="{% url 'region' %}?n=del Ñuble" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Biobío<a href="{% url 'region' %}?n=del Biobío" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>La Araucanía<a href="{% url 'region' %}?n=de La Araucanía" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Los Ríos<a href="{% url 'region' %}?n=de Los Ríos" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Los Lagos<a href="{% url 'region' %}?n=de Los Lagos" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Aysén <a href="{% url 'region' %}?n=de Aysén " class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div>Magallanes <a href="{% url 'region' %}?n=de Magallanes " class="secondary-content"><i class="material-icons">send</i></a></div></li>
+    </ul>
+  </div>        
+</div>
+  
+<footer class="page-footer green lighten-1">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Logo grupo</h5>
+        <p class="grey-text text-lighten-4">DataCrown</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">FONO COVID-19</h5>
+        logo uai
+      </div>
     </div>
-    <footer class="page-footer green lighten-1">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Logo grupo</h5>
-            <p class="grey-text text-lighten-4">DataCrown</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">FONO COVID-19</h5>
-            logo uai
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-        © 2014 Copyright Text
-        </div>
-      </div>
-    </footer>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
