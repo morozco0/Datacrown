@@ -1,24 +1,7 @@
-<!DOCTYPE html>
-<html lang='es' style='height: 100%;'>
-<head>
-    <title>DataCrown</title>
-    {% load static %}
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" >
-    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
-</head>
-<body class="#e8f5e9 green lighten-5">
-  <nav>
-      <div class="nav-wrapper green lighten-1">
-        <a href="#!" class="brand-logo center">COVID-19 en Chile</a>
-        <ul class="left hide-on-med-and-down">
-          <li><a href="{% url 'index' %}">Inicio</a></li>
-          <li class="active"><a href="">Regiones</a></li>
-          <li><a href="{% url 'medidas' %}">Medidas</a></li>
-        </ul>
-      </div>
-  </nav>
+{% include 'formato.html' with template_padre='regiones' %}
+{% load static %}
+
+{% block contenido %}
 
 <div class='row'>
   <div class='col s8 offset-s2'>  
@@ -64,5 +47,4 @@
   </div>
 </footer>
 
-</body>
-</html>
+{% endblock %}

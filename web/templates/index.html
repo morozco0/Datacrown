@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang='es' style='height: 100%;'>
-<head>
-    <title>DataCrown</title>
-    {% load static %}
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" >
-    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
-</head>
+{% load static %}
+{% include 'formato.html' with template_padre='index' %}
 
-<body class="#e8f5e9 green lighten-5">
-    <nav>
-        <div class="nav-wrapper green lighten-1">
-          <a href="#!" class="brand-logo center">COVID-19 en Chile</a>
-          <ul class="left hide-on-med-and-down">
-            <li class="active"><a href="">Inicio</a></li>
-            <li><a href="{% url 'regiones' %}">Regiones</a></li>
-            <li><a href="{% url 'medidas' %}">Medidas</a></li>
-          </ul>
-        </div>
-    </nav>
-    
+{% block contenido %}
 <div class="row">
   <div><p></p></div>
   <div class='col s2'>
@@ -95,27 +76,26 @@
     <div class='col s2'>
       <img src="{% static 'img/virus2.png' %}" height="200" />
     </div> 
-</div>      
+</div>     
 
 <footer class="page-footer green lighten-1">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Logo grupo</h5>
+        <p class="grey-text text-lighten-4">DataCrown</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">FONO COVID-19</h5>
+        logo uai
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Logo grupo</h5>
-          <p class="grey-text text-lighten-4">DataCrown</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">FONO COVID-19</h5>
-          logo uai
-        </div>
-      </div>
+    © 2014 Copyright Text
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      © 2014 Copyright Text
-      </div>
-    </div>
-  </footer>
-  
-</body>
-</html>
+  </div>
+</footer>
+
+{% endblock %}

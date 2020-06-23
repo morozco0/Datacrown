@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 def index(request):
     return render(request,'index.html')
@@ -10,5 +10,9 @@ def medidas(request):
     return render(request,'medidas.html')
 
 def region(request):
-    context = {'nombre_region': request.GET['n']}
-    return render(request,'region.html',context)    
+    nombreregion = request.GET.get('n','')
+    if nombreregion == '':
+        return redirect('index')
+    else:
+        context = {'nombre_region': nombreregion}
+        return render(request,'region.html',context)    
