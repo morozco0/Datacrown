@@ -8,3 +8,11 @@ class Contagios(models.Model):
 
     def publish(self):
         self.save()
+
+class AcumuladoNacional(models.Model):
+    mes = models.CharField(max_length=10)
+    contagiados = models.IntegerField()
+    fallecidos = models.IntegerField()
+
+    def publish(self):
+        self.save()

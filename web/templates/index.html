@@ -9,7 +9,7 @@
   </div>  
   <div class='card-panel col s8'>
     <div class=" col s6">
-      <span class="black-text">
+      <span class="black-text center">
         <h2 style="text-align: center;">0000</h2>
         <h5 style="text-align: center;">Total contagios con COVID-19</h5>
         <h5 style="text-align: center;">a nivel nacional</h5>
@@ -78,6 +78,63 @@
     </div> 
 </div>     
 
+<div class='row'>
+  <div class='col s8 offset-s2'>
+    <div id="container">
+      <script type='text/javascript'>
+            Highcharts.chart('container', {
+            chart: {
+                type: 'area'
+            },
+            title: {
+                text: 'COVID-19 en Chile'
+            },
+            subtitle: {
+                text: 'Registro a Nivel Nacional'
+            },
+            xAxis: {
+                categories: {{meses|safe}},
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Cant. Personas'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b> {point.y} personas</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Contagiados',
+                data: {{contagiados|safe}}
+
+            }, {
+                name: 'Fallecidos',
+                data: {{fallecidos|safe}}
+
+            }]
+        });
+      </script>
+    </div>
+  </div>  
+</div>
+
+
+
+
+
 <footer class="page-footer green lighten-1">
   <div class="container">
     <div class="row">
@@ -97,5 +154,6 @@
     </div>
   </div>
 </footer>
+
 
 {% endblock %}
