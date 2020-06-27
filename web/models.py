@@ -7,7 +7,8 @@ class dat_regiones(models.Model):
     nuevos_contagios = models.IntegerField()
     nuevos_fallecidos = models.IntegerField()
     casos_activos = models.IntegerField()
-
+    total_muertosanterior = models.IntegerField()
+    
     def publish(self):
         self.save()
 

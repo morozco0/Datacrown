@@ -5,9 +5,9 @@ def index(request):
     lista_covid = AcumuladoNacional.objects.all()
     datos_region = dat_regiones.objects.all()
 
-    lista_meses =['3 de marzo']
-    lista_cont =[1]
-    lista_fall =[0]
+    lista_meses =['3 de marzo','21 de marzo']
+    lista_cont =[1,547]
+    lista_fall =[0,1]
     contatotal_regiones = 0
     falltotal_regiones = 0
     nuev_cont = 0
@@ -21,6 +21,7 @@ def index(request):
         contatotal_regiones += datos.total_contagiados
         falltotal_regiones += datos.total_fallecidos
         nuev_cont += datos.nuevos_contagios
+
     lista_meses.append('Actual')
     lista_cont.append(contatotal_regiones)
     lista_fall.append(falltotal_regiones)
