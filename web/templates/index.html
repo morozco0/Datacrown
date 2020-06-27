@@ -10,14 +10,14 @@
   <div class='card-panel col s8'>
     <div class=" col s6">
       <span class="black-text center">
-        <h2 style="text-align: center;">0000</h2>
+        <h2 style="text-align: center;">{{contagnacional}}</h2>
         <h5 style="text-align: center;">Total contagios con COVID-19</h5>
         <h5 style="text-align: center;">a nivel nacional</h5>
       </span>
     </div>
     <div class="col s6">
       <span class="black-text">
-        <h2 style="text-align: center;">0000</h2>
+        <h2 style="text-align: center;">{{fallnacional}}</h2>
         <h5 style="text-align: center;">Total fallecidos por COVID-19</h5>
         <h5 style="text-align: center;">a nivel nacional</h5>
       </span>
@@ -35,9 +35,9 @@
     <div class="col s4">
       <div class="card-panel">
         <span class="black-text">
-          <h2 style="text-align: center;">+0000</h2>
-          <h5 style="text-align: center;">Contagios por COVID-19</h5>
-          <h5 style="text-align: center;">a nivel nacional</h5>
+          <h2 style="text-align: center;">+{{nuevocont}}</h2>
+          <h5 style="text-align: center;">Nuevos contagios por</h5>
+          <h5 style="text-align: center;">COVID-19 a nivel nacional</h5>
         </span>
       </div>        
     </div>
@@ -59,30 +59,15 @@
   <div class='col s2'>
     <img src="{% static 'img/virus4.png' %}" height="200" />
   </div> 
-    <div class="col s4">
-      <div class="card-panel">
-        <span class="black-text">
-          <h5 style="text-align: center;">Gráficos de contagios por género</h5>
-        </span>
-      </div>        
-    </div>
-    <div class="col s4">
-      <div class="card-panel">
-        <span class="black-text">
-          <h5 style="text-align: center;">Gráficos de contagios por género</h5>
-        </span>
-      </div>        
-    </div>
-    <div class='col s2'>
-      <img src="{% static 'img/virus2.png' %}" height="200" />
-    </div> 
-</div>     
-
-<div class='row'>
-  <div class='col s8 offset-s2'>
-    <div id="container">
-      <script type='text/javascript'>
-            Highcharts.chart('container', {
+    
+  <div class='row'>
+    <div class='card-panel col s8'>
+      <div>
+        <h2 style='text-align: center;'>Avance de Contagiados y Fallecidos</h2>
+      </div>
+      <div id="container">
+        <script type='text/javascript'>
+          Highcharts.chart('container', {
             chart: {
                 type: 'area'
             },
@@ -119,17 +104,21 @@
             series: [{
                 name: 'Contagiados',
                 data: {{contagiados|safe}}
-
+  
             }, {
                 name: 'Fallecidos',
                 data: {{fallecidos|safe}}
-
             }]
-        });
-      </script>
-    </div>
-  </div>  
-</div>
+          });
+        </script>
+      </div>
+    </div>  
+    <div class='col s2'>
+      <img src="{% static 'img/virus2.png' %}" height="200" />
+    </div> 
+</div>     
+
+
 
 
 

@@ -1,10 +1,12 @@
 from django.db import models
 
-class Contagios(models.Model):
-    total_region = models.IntegerField()
-    total_fall = models.IntegerField()
-    nuev_cont = models.IntegerField()
-    nuev_fall = models.IntegerField()
+class dat_regiones(models.Model):
+    region = models.CharField(max_length=100)
+    total_contagiados = models.IntegerField()
+    total_fallecidos = models.IntegerField()
+    nuevos_contagios = models.IntegerField()
+    nuevos_fallecidos = models.IntegerField()
+    casos_activos = models.IntegerField()
 
     def publish(self):
         self.save()
