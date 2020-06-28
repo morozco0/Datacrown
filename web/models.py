@@ -5,7 +5,6 @@ class dat_regiones(models.Model):
     total_contagiados = models.IntegerField()
     total_fallecidos = models.IntegerField()
     nuevos_contagios = models.IntegerField()
-    nuevos_fallecidos = models.IntegerField()
     casos_activos = models.IntegerField()
     total_muertosanterior = models.IntegerField()
     

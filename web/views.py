@@ -11,6 +11,7 @@ def index(request):
     contatotal_regiones = 0
     falltotal_regiones = 0
     nuev_cont = 0
+    fall_totalant = 0
 
     for datos in lista_covid:
       lista_meses.append(datos.mes)
@@ -21,13 +22,15 @@ def index(request):
         contatotal_regiones += datos.total_contagiados
         falltotal_regiones += datos.total_fallecidos
         nuev_cont += datos.nuevos_contagios
+        fall_totalant += datos.total_muertosanterior
 
     lista_meses.append('Actual')
     lista_cont.append(contatotal_regiones)
     lista_fall.append(falltotal_regiones)
+    nuev_fall = falltotal_regiones - fall_totalant
            
     context = {'meses': lista_meses,'contagiados': lista_cont,'fallecidos':lista_fall,
-     'contagnacional':contatotal_regiones, 'fallnacional': falltotal_regiones, 'nuevocont':nuev_cont}
+     'contagnacional':contatotal_regiones, 'fallnacional': falltotal_regiones, 'nuevocont':nuev_cont, 'nuevfall': nuev_fall}
     return render(request,'index.html',context)
 
 def regiones(request):
@@ -49,6 +52,6 @@ def region(request):
                 'acumuladocont': datos.total_contagiados,
                 'acumuladofall': datos.total_fallecidos,
                 'nuevosconta': datos.nuevos_contagios,
-                'nuevosfall': datos.nuevos_fallecidos,
+                'nuevosfall': (datos.total_fallecidos-datos.total_muertosanterior),
                 'casosactivos': datos.casos_activos,}
     return render(request,'region.html',context)    
