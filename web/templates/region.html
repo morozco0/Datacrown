@@ -3,6 +3,19 @@
 
 {% block contenido %}
 
+<div class="nav-wrapper green lighten-1 ">
+  <a class="brand-logo center" >COVID-19 en Chile</a>
+  <ul class="left hide-on-med-and-down">
+    <li class="{% if template_padre == 'index' %}active{% else %}{% endif %}"><a href="{% url 'index' %}">Inicio</a></li>
+    <li class="{% if template_padre == 'regiones' %}active{% else %}{% endif %}"><a href="{% url 'regiones' %}">Regiones</a></li>
+    <li class="{% if template_padre == 'medidas' %}active{% else %}{% endif %}"><a href="{% url 'medidas' %}">Medidas</a></li>
+  </ul>
+</div>
+
+
+
+
+
 <div class='row'>
     <div class='col s8 offset-s2'>
         <h1 style='text-align: center;'>Región {{nombre_region}}</h1>

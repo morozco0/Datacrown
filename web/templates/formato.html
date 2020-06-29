@@ -13,19 +13,24 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script>
+    $(document).ready(function(){
+      $('select').formSelect();
+    });
+    </script>
 
 </head>
 
 <body class="#e8f5e9 green lighten-5">
-    <nav >
-        <div class="nav-wrapper green lighten-1 ">
-          <a class="brand-logo center" >COVID-19 en Chile</a>
-          <ul class="left hide-on-med-and-down">
-            <li class="{% if template_padre == 'index' %}active{% else %}{% endif %}"><a href="{% url 'index' %}">Inicio</a></li>
-            <li class="{% if template_padre == 'regiones' %}active{% else %}{% endif %}"><a href="{% url 'regiones' %}">Regiones</a></li>
-            <li class="{% if template_padre == 'medidas' %}active{% else %}{% endif %}"><a href="{% url 'medidas' %}">Medidas</a></li>
-          </ul>
-        </div>
+    <nav class="nav-wrapper green lighten-1">
+      <div>
+        <a class="brand-logo center" >COVID-19 en Chile</a>
+        <ul class="left hide-on-med-and-down">
+          <li class="{% if template_padre == 'index' %}active{% else %}{% endif %}"><a href="{% url 'index' %}">Inicio</a></li>
+          <li class="{% if template_padre == 'regiones' %}active{% else %}{% endif %}"><a href="{% url 'regiones' %}">Regiones</a></li>
+          <li class="{% if template_padre == 'medidas' %}active{% else %}{% endif %}"><a href="{% url 'medidas' %}">Medidas</a></li>
+        </ul>
+      </div>
     </nav>
 
     {% block contenido %}    

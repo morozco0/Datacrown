@@ -9,7 +9,7 @@ def index(request):
     lista_cont =[1,547]
     lista_fall =[0,1]
     contatotal_regiones = 0
-    falltotal_regiones = 0
+    fall_totalnuev = 0
     nuev_cont = 0
     fall_totalant = 0
 
@@ -20,31 +20,32 @@ def index(request):
 
     for datos in datos_region:
         contatotal_regiones += datos.total_contagiados
-        falltotal_regiones += datos.total_fallecidos
+        fall_totalnuev += datos.total_fallecidos
         nuev_cont += datos.nuevos_contagios
         fall_totalant += datos.total_muertosanterior
 
     lista_meses.append('Actual')
     lista_cont.append(contatotal_regiones)
-    lista_fall.append(falltotal_regiones)
-    nuev_fall = falltotal_regiones - fall_totalant
+    lista_fall.append(fall_totalnuev)
+    nuev_fall = fall_totalnuev - fall_totalant
            
     context = {'meses': lista_meses,'contagiados': lista_cont,'fallecidos':lista_fall,
-     'contagnacional':contatotal_regiones, 'fallnacional': falltotal_regiones, 'nuevocont':nuev_cont, 'nuevfall': nuev_fall}
+     'contagnacional':contatotal_regiones, 'fallnacional': fall_totalnuev, 'nuevocont':nuev_cont, 'nuevfall': nuev_fall}
     return render(request,'index.html',context)
 
 def regiones(request):
-    return render(request,'regiones.html')
-
-def medidas(request):
-    return render(request,'medidas.html')
-
-def region(request):
-    nombreregion = request.GET.get('n','')
+    nombreregion = request.POST.get('region','')
     datos_region = dat_regiones.objects.all()
     if nombreregion == '':
-        return redirect('index')
-    else:
+        context = {
+                'nombre_region': '...',
+                'acumuladocont': '-',
+                'acumuladofall': '-',
+                'nuevosconta': '-',
+                'nuevosfall': '-',
+                'casosactivos': '-'}
+        return render(request,'regiones.html',context)
+    else:    
         for datos in datos_region:
             if nombreregion == datos.region:
                 context = {
@@ -54,4 +55,7 @@ def region(request):
                 'nuevosconta': datos.nuevos_contagios,
                 'nuevosfall': (datos.total_fallecidos-datos.total_muertosanterior),
                 'casosactivos': datos.casos_activos,}
-    return render(request,'region.html',context)    
+                return render(request,'regiones.html',context)
+
+def medidas(request):
+    return render(request,'medidas.html')
