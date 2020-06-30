@@ -43,7 +43,8 @@ def regiones(request):
                 'acumuladofall': '-',
                 'nuevosconta': '-',
                 'nuevosfall': '-',
-                'casosactivos': '-'}
+                'casosactivos': '-',
+                'examenpcr': '-'}
         return render(request,'regiones.html',context)
     else:    
         for datos in datos_region:
@@ -54,7 +55,8 @@ def regiones(request):
                 'acumuladofall': datos.total_fallecidos,
                 'nuevosconta': datos.nuevos_contagios,
                 'nuevosfall': (datos.total_fallecidos-datos.total_muertosanterior),
-                'casosactivos': datos.casos_activos,}
+                'casosactivos': datos.casos_activos,
+                'examenpcr': datos.examen_pcr}
                 return render(request,'regiones.html',context)
 
 def medidas(request):
